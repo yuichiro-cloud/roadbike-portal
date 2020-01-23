@@ -1,0 +1,8 @@
+.bike
+  -@bikes.each do |b|
+    = link_to b.model, bike_path(b.id), class:"bike"
+    -# b.title
+    -# = link_to "詳細", "/bikes/#{@bikes.find(params[:id])}"
+    
+
+    

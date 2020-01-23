@@ -1,0 +1,82 @@
+.content-n
+  .content-n__form
+  = form_for @bike do |f|
+    .content-n__form__box
+      .content-n__form__box__name
+        ブランド名
+        = f.text_field :brand
+    .content-n__form__box
+      .content-n__form__box__name
+        車種名
+        = f.text_field :model
+    .content-n__form__box
+      .content-n__form__box__name
+        画像
+        = f.text_field :image
+    .content-n__form__box
+      .content-n__form__box__name
+        価格
+        = f.text_field :price
+    .content-n__form__box
+      .content-n__form__box__name
+        重さ
+        = f.text_field :weight
+    = f.submit :"登録する", class:"content-n__submit"
+      
+        
+
+
+
+
+
+
+
+  -# = form_for @bike do |f|
+  -#   .content-n__info
+  -#     車種を登録してください
+  -#   .content-n__form
+  -#     .content-n__form__box
+  -#       .content-n__form__box__name
+  -#         ブランド名
+  -#         = f.text_field :brand_id
+  -#     .content-n__form__box
+  -#       .content-n__form__box__name
+  -#         車種名
+  -#         = f.text_field :model_id
+  -#     .content-n__form__box
+  -#       .content-n__form__box__name
+  -#         画像
+  -#         = f.text_field :image
+  -#     .content-n__form__box
+  -#       .content-n__form__box__name
+  -#         価格
+  -#         = f.text_field :price_id
+  -#     .content-n__form__box
+  -#       .content-n__form__box__name
+  -#         重さ
+  -#         = f.text_field :weight_id
+  -#   = f.submit :"登録する", class:"content-n__submit"
+
+
+
+    -# .content-n__form__box__name
+    -#       ブランド名
+    -#     = f.select :brand_id, [["あ","1"],["い","2"]], class:"content__form__box__btn"
+    -#   .content-n__form__box
+    -#     .content-n__form__box__name
+    -#       車種名
+    -#     = f.select :model_id, [["あ","1"],["い","2"]], class:"content__form__box__btn"
+    -#   .content-n__form__box
+    -#     .content-n__form__box__name
+    -#       画像
+    -#     = f.select :image, [["あ","1"],["い","2"]], class:"content__form__box__btn"
+    -#   .content-n__form__box
+    -#     .content-n__form__box__name
+    -#       価格
+    -#     = f.select :price_id, [["2","1"],["4","2"]], class:"content__form__box__btn"
+    -#   .content-n__form__box
+    -#     .content-n__form__box__name
+    -#       重さ
+    -#     = f.select :weight_id, [["1","1"],["2","2"]], class:"content__form__box__btn"
+    -# = f.fields_for :brands do |i|
+    -#       = i.text_field :name

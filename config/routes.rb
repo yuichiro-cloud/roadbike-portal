@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
   devise_for :users
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root "gets#index"
+  devise_scope :user do
+    get '/users/sign_out' => 'devise/sessions#destroy'
+  end
+  resources :bikes, only: [:new,:index, :show, :create]
+  resources :users
+  resources :groups,only:[:new]
+  resources :gets,only:[:index, :show] do
+    get :search, on: :collection
+  end
+
 end

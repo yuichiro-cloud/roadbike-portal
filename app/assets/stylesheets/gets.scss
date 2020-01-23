@@ -1,0 +1,79 @@
+//gesコントローラーのindexアクションとheader,footerに対応するscss
+header{
+  height: 70px;
+  background-color:white;
+  line-height: 70px;
+  display: flex;
+  justify-content: space-between;
+  .header__name{
+    font-size: 40px;
+    text-decoration: none;
+    color: green;
+    margin-left: 20px;
+    width: 30px;
+  }
+  &__btn{
+    font-size: 20px;
+    width: 200px;
+    display: block;
+    .header__btn{
+      &__post{
+        text-decoration: none;
+        color: pink;
+        //border: solid 1px blue;
+      }
+      &__sign-out{
+        text-decoration: none;
+        color: pink;
+      }
+      &__sign-up{
+        text-decoration: none;
+        color: pink;
+        //border: solid 1px blue;
+      }
+      &__sign-in{
+        text-decoration: none;
+        color: pink;
+        //border: solid 1px blue;
+      }
+    }
+  }
+}
+  .content-i{
+    height:calc(100vh - 120px);
+    background-color: gray;
+    &__top{
+      display: flex;
+      &__count{
+        font-size: 25px;
+
+      }
+      &__form{
+        background-color: white;
+        height: 50px;
+        width: 400px;
+        margin-left: 100px;
+      }
+      &__submit{
+        line-height: 50px;
+      }
+    }
+    &__bottom{
+      background-color: lightblue;
+      &__font{
+        font-size: 30px;
+      }
+      &__list{
+        &__box{
+
+        }
+      }
+    }
+  }
+  footer{
+  height: 50px;
+  background-color: yellow;
+  }
+// .header__btn__sign-up{
+//   font-size: 50px;
+// }
