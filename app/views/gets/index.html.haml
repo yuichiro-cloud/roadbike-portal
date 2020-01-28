@@ -1,0 +1,17 @@
+.content-i
+  .content-i__top
+    = form_tag(search_bikes_path, method: :get) do
+      .content-i__top__count
+        = "現在#{@bikes.max.id}台登録されています"
+      = text_field_tag :search, "", {placeholder: "入力してください",class:"content-i__top__form"}
+      = submit_tag '検索', {class:"content-i__top__submit"}
+  .content-i__bottom
+    .content-i__bottom__font
+      ブランドから探す
+    .content-i__bottom__list
+      -@bikes.each do |b|
+        .content-i__bottom__list__box
+          .content-i__bottom__list__box__font
+            = "ブランド名:"
+            = link_to b.brand, search_bikes_path(b.id),class:"content-i__bottom__list__box__font__link"
+  = link_to "コミュニティーはこちら", groups_path, class:"content-i__under"

@@ -1,0 +1,5 @@
+.comment
+  - @comments.each do |f|
+    .comment__text
+      = f.text
+  = link_to "新規コメント作成", new_bike_comment_path(params[:bike_id]), class:"comment__new"

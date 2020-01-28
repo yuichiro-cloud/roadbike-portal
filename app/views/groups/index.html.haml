@@ -1,0 +1,10 @@
+.groups
+  -@groups.each do |g|
+    .groups__group
+      %label.groups__group__label
+        .groups__group__label__box
+          = link_to g.name,group_chats_path(g.id),class:"grous__group__label__box__link"
+        .groups__group__label__list
+          = "aaaa"
+        
+          

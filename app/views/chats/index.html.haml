@@ -1,0 +1,17 @@
+.header
+  = "#{@group.name}のチャット"
+.chats
+  - @chats.each do |c|
+    .chats__box{data:{chat:{id:c.id}}}
+      .chats__box__chat
+        = c.text
+      .chats__box__name
+        = "#{c.user.nickname}さん"
+      .chats__box__date
+        = c.created_at
+      
+
+.form
+  = form_for [@group,@chat] do |f|
+    = f.text_area :text
+    = f.submit "送信",class:"form__submit"

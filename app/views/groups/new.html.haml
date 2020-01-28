@@ -1,0 +1,6 @@
+-# 新規チャットグループ作成
+.form
+= form_for @group do |f|
+  = "グループ名"
+  = f.text_field :name, class:"form__group"
+  = f.submit class:"form__submit"
