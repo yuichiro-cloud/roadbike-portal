@@ -2,6 +2,7 @@ class BikesController < ApplicationController
   before_action :bike_params, only: [:create]
 
   def index
+    # binding.pry
     @bikes = Bike.all
     # binding.pry
     # @bike = Bike.search(params[:search])
@@ -23,14 +24,29 @@ class BikesController < ApplicationController
   end
 
   def search
-    #Viewのformで取得したパラメータをモデルに渡す
+    if params[:search].present?
+      @forms = Bike.where(model:"#{params[:search]}")
+    elsif params[:format].present?
+      @bike = Bike.find(params[:format])
+      @bikes = Bike.where(brand:"#{@bike.brand}")
+    else
+      @bikes = Bike.none
+      @forms = Bike.none
+    end
   end
 
   def show
     # binding.pry
     @bike = Bike.find(params[:id])
+    @comments = @bike.comments
     # binding.pry
     # @bike = @bikes.find(1)
+    # @comment = Comment.find_by(bike_id: params[:id])
+    # binding.pry
+    # render template: "comments/index"
+    # binding.pry
+
+    # binding.pry
   end
 
   def create

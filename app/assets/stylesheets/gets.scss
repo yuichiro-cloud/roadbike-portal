@@ -14,7 +14,6 @@ header{
   }
   &__btn{
     font-size: 20px;
-    width: 200px;
     display: block;
     .header__btn{
       &__post{
@@ -60,14 +59,40 @@ header{
     }
     &__bottom{
       background-color: lightblue;
+      text-decoration: none;
       &__font{
         font-size: 30px;
       }
       &__list{
+        // display: flex;
         &__box{
-
+          display: flex;
+        &__font{
+          color: blue;
+        &__link{
+          // background-color: lightgray;
+          // background-color: orchid;
+          // border: solid 1px orange;
+          text-decoration: none;
+          color: green;
+          font-size: 20px;
+          margin-bottom: 2px;
         }
       }
+        &__link-add{
+          font-size: 20px;
+          // background-color: orchid;
+          border: solid 3px gray;
+          // padding-top: 1px;
+          // padding-right: 2px;
+        }
+      }
+      }
+    }
+    &__under{
+      text-decoration: none;
+      color: black;
+      font-size: 30px;
     }
   }
   footer{
@@ -77,3 +102,4 @@ header{
 // .header__btn__sign-up{
 //   font-size: 50px;
 // }
+

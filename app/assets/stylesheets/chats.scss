@@ -1,0 +1,27 @@
+.header{
+  font-size: 30px;
+  border: solid 1px black;
+  background-color: lightgreen;
+  padding-top: 5px;
+}
+.chats{
+  margin-top: 5px;
+  height:calc(100vh - 160px);
+  overflow:scroll;
+  &__box{
+    display: flex;
+    &__chat{
+      font-size: 20px;
+    }
+    &__name{
+      font-size: 15px;
+      margin-left: 10px;
+      color: gray;
+    }
+    &__date{
+      font-size: 15px;
+      color: gray;
+    }
+  }
+
+}

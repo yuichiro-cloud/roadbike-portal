@@ -1,6 +1,6 @@
 .content-i
   .content-i__top
-    = form_tag(search_gets_path, method: :get) do
+    = form_tag(search_bikes_path, method: :get) do
       .content-i__top__count
         = "現在#{@bikes.max.id}台登録されています"
       = text_field_tag :search, "", {placeholder: "入力してください",class:"content-i__top__form"}
@@ -11,7 +11,7 @@
     .content-i__bottom__list
       -@bikes.each do |b|
         .content-i__bottom__list__box
-          = "ブランド名:"
-          = link_to b.brand, search_gets_path(b.id)
-      -# = link_to "検索", "bikes/index", class:"content-i__top__submit"
-      -# = text_field :search, class: "content-i__top__form"
+          .content-i__bottom__list__box__font
+            = "ブランド名:"
+            = link_to b.brand, search_bikes_path(b.id),class:"content-i__bottom__list__box__font__link"
+  = link_to "コミュニティーはこちら", groups_path, class:"content-i__under"

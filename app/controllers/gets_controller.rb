@@ -4,17 +4,7 @@ class GetsController < ApplicationController
     # binding.pry
   end
 
-  def search
-    if params[:search].present?
-      @forms = Bike.where(model:"#{params[:search]}")
-    elsif params[:format].present?
-      @bike = Bike.find(params[:format])
-      @bikes = Bike.where(brand:"#{@bike.brand}")
-    else
-      @bikes = Bike.none
-      @forms = Bike.none
-    end
-  end
+  
     # binding.pry
     # @bikes = Bike.find(params[:format])
     # @form = Bike.find(params[:format])
