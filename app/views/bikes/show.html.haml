@@ -3,6 +3,9 @@
     =  "ブランド名:#{@bike.brand}"
   .bike_model
     = "車種名:#{@bike.model}"
+  .bike_image
+    - @images.each do |i|
+      = image_tag "#{i.src}",width:"100px",height:"100px"
   .bike__weight
     = "重さ:#{@bike.weight}kg"
   .bike__price

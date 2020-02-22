@@ -1,0 +1,58 @@
+//bikesコントローラーのnewアクションに対応するscss
+.bikes{
+  .new{
+    .content{
+      background-color: green;
+      padding: 40px;
+      // overflow: scroll;
+      &__form{
+        background-color: red;
+        margin: 0 auto;
+        width: 500px;
+        // background-color: lightblue
+        &__box{
+          margin: 20px;
+          display: flex;
+          justify-content: space-between;
+          &__name{
+            .field{
+              margin: 10px;
+            }
+          }
+        }
+        &__image{
+          margin: 20px;
+          // height: 200px;
+          background-color: pink;
+          &__name{
+          }
+          label{
+          .content__form__image__box{
+            // text-align: center;
+            // background-color: blue;
+            // height: 120px;
+            padding: 5px;
+            &__label{
+              height: 120px;
+              background-color: blue;
+              text-align: center;
+              line-height: 120px;
+            .file{
+              display: none;
+            }
+          }
+          }
+        }
+        }
+      &__submit{
+        margin-top: 50px;
+        // margin-left: 100px;
+        text-align:center;
+        &__btn{
+          background-color: red;
+        }
+      }
+    }
+    }
+  }
+}

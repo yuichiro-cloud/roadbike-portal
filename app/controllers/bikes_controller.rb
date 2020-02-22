@@ -1,6 +1,11 @@
 class BikesController < ApplicationController
   before_action :bike_params, only: [:create]
-
+  
+  def top
+    @bikes = Bike.all
+    
+  end
+  
   def index
     # binding.pry
     @bikes = Bike.all
@@ -8,19 +13,27 @@ class BikesController < ApplicationController
     # @bike = Bike.search(params[:search])
     # binding.pry
   end
+  
+  def show
+    # binding.pry
+    @bike = Bike.find(params[:id])
+    @images = @bike.images
+    # binding.pry
+    @comments = @bike.comments
+    # binding.pry
+    # @bike = @bikes.find(1)
+    # @comment = Comment.find_by(bike_id: params[:id])
+    # binding.pry
+    # render template: "comments/index"
+    # binding.pry
+
+    # binding.pry
+  end
 
   def new
-    # binding.pry
     @bike = Bike.new
-    # @bike.brands.new
-    # binding.pry
-    # @bike = Bike.new
-    # binding.pry
-    # @bike.brand << params
-    # @bike.kind
-    # @bike.image
-    # @bike.price
-    # @bike.weight
+    @images = @bike.images.new
+
   end
 
   def search
@@ -35,19 +48,6 @@ class BikesController < ApplicationController
     end
   end
 
-  def show
-    # binding.pry
-    @bike = Bike.find(params[:id])
-    @comments = @bike.comments
-    # binding.pry
-    # @bike = @bikes.find(1)
-    # @comment = Comment.find_by(bike_id: params[:id])
-    # binding.pry
-    # render template: "comments/index"
-    # binding.pry
-
-    # binding.pry
-  end
 
   def create
     # binding.pry
@@ -73,7 +73,7 @@ class BikesController < ApplicationController
   #   params.require(:bike).permit(:brand_id)
   # end
     def bike_params
-      params.require(:bike).permit(:model, :price, :weight, :brand)
+      params.require(:bike).permit(:model, :price, :weight, :brand, images_attributes:[:src])
     end
 
     # def set_bike

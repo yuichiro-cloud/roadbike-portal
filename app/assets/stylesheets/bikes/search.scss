@@ -1,23 +1,27 @@
-.forms{
-  &__form{
-    &__box{
-      &__brand{
-        &__link{
-        text-decoration: none;
+.bikes{
+  .search{
+    .forms{
+      &__form{
+        &__box{
+          &__brand{
+            &__link{
+            text-decoration: none;
+          }
+        }
+        }
+      }
+      &__error{
+
       }
     }
+    .forms__form__box__brand__link{
+      text-decoration: none;
+    }
+
+    .forms__form__box__brand__link{
+      text-decoration: none;
     }
   }
-  &__error{
-
-  }
-}
-.forms__form__box__brand__link{
-  text-decoration: none;
-}
-
-.forms__form__box__brand__link{
-  text-decoration: none;
 }
 
 

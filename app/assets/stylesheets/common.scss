@@ -1,0 +1,45 @@
+  //ヘッダーフッターのscss
+  header{
+    height: 70px;
+    background-color:white;
+    line-height: 70px;
+    display: flex;
+    justify-content: space-between;
+    .name{
+      font-size: 40px;
+      text-decoration: none;
+      color: green;
+      margin-left: 20px;
+      width: 30px;
+    }
+    .btn{
+      font-size: 20px;
+      display: block;
+      &__user{
+        text-decoration: none;
+      }
+      &__post{
+        text-decoration: none;
+        color: pink;
+        //border: solid 1px blue;
+      }
+      &__sign-out{
+        text-decoration: none;
+        color: pink;
+      }
+      &__sign-up{
+        text-decoration: none;
+        color: pink;
+        //border: solid 1px blue;
+      }
+      &__sign-in{
+        text-decoration: none;
+        color: pink;
+        //border: solid 1px blue;
+      }
+    }
+  }
+  footer{
+    height: 50px;
+    background-color: yellow;
+    }

@@ -1,7 +1,9 @@
 @import "./reset";
 @import "./gets";
-@import "./bikes-new";
-@import "./bikes-show";
+@import "./bikes/new";
+@import "./bikes/show";
 @import "./chats.scss";
 @import "./groups.scss";
-@import "./bikes-search.scss";
+@import "./bikes/search.scss";
+@import "./bikes/top.scss";
+@import "./common.scss";
