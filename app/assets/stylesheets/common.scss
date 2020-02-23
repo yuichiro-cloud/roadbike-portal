@@ -5,13 +5,19 @@
     line-height: 70px;
     display: flex;
     justify-content: space-between;
-    .name{
-      font-size: 40px;
+
+    .name {
       text-decoration: none;
-      color: green;
-      margin-left: 20px;
-      width: 30px;
+      margin-left: 10px;
+      font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;;
+      font-size: 40px;
+      color: red;
+      text-shadow: 0 8px 9px #c4b59d, 0px -2px 1px #fff;
+      font-weight: bold;
+      letter-spacing: -4px;
+      border-radius: 20px;
     }
+
     .btn{
       font-size: 20px;
       display: block;

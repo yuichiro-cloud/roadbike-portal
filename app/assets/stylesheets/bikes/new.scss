@@ -4,12 +4,10 @@
     .content{
       background-color: green;
       padding: 40px;
-      // overflow: scroll;
       &__form{
         background-color: red;
         margin: 0 auto;
-        width: 500px;
-        // background-color: lightblue
+        width: 800px;
         &__box{
           margin: 20px;
           display: flex;
@@ -22,26 +20,43 @@
         }
         &__image{
           margin: 20px;
-          // height: 200px;
-          background-color: pink;
+          // background-color: pink;
+          height: 100%;
+          width: 560px;
           &__name{
           }
-          label{
-          .content__form__image__box{
-            // text-align: center;
-            // background-color: blue;
-            // height: 120px;
+          &__main{
             padding: 5px;
-            &__label{
-              height: 120px;
-              background-color: blue;
-              text-align: center;
-              line-height: 120px;
-            .file{
-              display: none;
+            display: flex;
+            flex-wrap: wrap;
+            width: 550px;
+            &__box{
+              margin: 5px;
+              &__pic{
+                width: 100px;
+                height: 100px;
+              }
+              &__btns{
+                width: 100px;
+                &__remove{
+                  background-color: red;
+                }
+              }
             }
-          }
-          }
+            &__label{
+              // height: 140px;
+              flex: 1;
+              text-align: center;
+              background-color: blue;
+              padding: 56px 20px 56px;
+              border: 1px dashed #ccc;
+              cursor: pointer;
+              &__group{
+                .file{
+                  display: none;
+                }
+              }
+            }
         }
         }
       &__submit{

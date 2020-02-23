@@ -22,12 +22,18 @@
           .content__form__image
             .content__form__image__name
               画像
-            %label
-              .content__form__image__box
-                .content__form__image__box__label
-                  選択
+            .content__form__image__main
+              -# .content__form__image__main__box #ここから下5行はjsでアペンドされる要素
+              -#   .content__form__image__main__box__pic
+              -#   .content__form__image__main__box__btns
+              -#     .content__form__image__main__box__btns__remove
+              -#       = "削除"
+              %label.content__form__image__main__label#label{for:"bike_images_attributes_0_src"}
+                #image-box
                   = f.fields_for :images do |image|
-                    = image.file_field :src,class:"file"
+                    .content__form__image__main__label__group{data:{index:image.index}}
+                      = image.file_field :src,class:"file"
+                    = "選択"
           .content__form__submit
             = f.submit :"登録する", class:"content__form__submit__btn"
       
