@@ -9,17 +9,4 @@ class Bike < ApplicationRecord
   has_many :comments
   has_many :images
   accepts_nested_attributes_for :images, allow_destroy: true
-  # belongs_to :user,optional:true
-  # belongs_to :brand,optional: true
-  # belongs_to :price,optional: true
-  # belongs_to :weight,optional: true
-  # belongs_to :model,optional: true
-  # has_many :brands
-  # has_many :prices
-  # has_many :weights
-  # has_many :models
-  # accepts_nested_attributes_for :brands
-  # accepts_nested_attributes_for :models
-  # accepts_nested_attributes_for :prices
-  # accepts_nested_attributes_for :weights
 end

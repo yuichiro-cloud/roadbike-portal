@@ -1,2 +1,94 @@
 .bike{
+  .show{
+    .contents{
+      background-color: #4072B3;
+      padding: 20px;
+      &__brand{
+        border-radius: 20px;
+        text-align: center;
+        width: 300px;
+        margin: 0 auto;
+        background-color: #C0C0C0;
+        margin-bottom: 5px;
+      }
+      &__model{
+        border-radius: 20px;
+        text-align: center;
+        width: 250px;
+        margin: 0 auto;
+        background-color: #C0C0C0;
+        margin-bottom: 5px;
+      }
+      &__image{
+        margin: 0 auto;
+        width: 400px;
+        padding: 20px;
+        &__box{
+          border-radius: 20px;
+          text-align: center;
+          width: 100%;
+          background-color: #AEC4E5;
+          padding: 5px;
+        }
+      }
+      &__weight{
+        border-radius: 20px;
+        text-align: center;
+        width: 200px;
+        margin: 0 auto;
+        background-color: #C0C0C0;
+        margin-bottom: 5px;
+      }
+      &__price{
+        border-radius: 20px;
+        text-align: center;
+        width: 200px;
+        margin: 0 auto;
+        background-color: #C0C0C0;  
+      }
+      &__comment{
+        margin: 0 auto;
+        width: 60vw;
+        margin-bottom: 20px;
+        &__box{
+          border-radius: 20px;
+          height: 200px;
+          overflow: scroll;
+          background-color: #AEC4E5;
+        &__list{
+          padding: 3px;
+          margin-left: 10px;
+          margin-top: 10px;
+        }
+      }
+    }
+        &__post{
+          line-height: 40px;
+          width: 200px;
+          height: 40px;
+          margin: 0 auto;
+          text-align: center;
+          border-radius: 20px;
+          background-color: #C0C0C0;
+          .comment{
+            color: black;
+          }
+        }
+          &__post:hover{
+            padding-right: 5px;
+            padding-top: 2px;
+            padding-bottom: 2px;
+            width: 203px;
+            height: 36px;
+            margin: 0 auto;
+            text-align: center;
+            border-radius: 20px;
+            // background-color: #C0C0C0;
+          background-color: gray;
+            .comment:hover{
+
+            }
+        }
+    }
+  }
 }

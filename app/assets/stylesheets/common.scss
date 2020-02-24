@@ -1,51 +1,83 @@
   //ヘッダーフッターのscss
+  @mixin name{
+    color: #235180;
+    border-bottom: 3px solid #235180;
+  }
   header{
     height: 70px;
-    background-color:white;
+    background-color:#DEDEDE;
     line-height: 70px;
     display: flex;
     justify-content: space-between;
 
     .name {
-      text-decoration: none;
       margin-left: 10px;
-      font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;;
+      font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
       font-size: 40px;
-      color: red;
+      color: #4790BB;
       text-shadow: 0 8px 9px #c4b59d, 0px -2px 1px #fff;
       font-weight: bold;
       letter-spacing: -4px;
-      border-radius: 20px;
+      // border-radius: 20px;
+    }
+    .name:hover{
+      margin-left: 12px;
+      color: #235180;
+      letter-spacing: -5px;
     }
 
     .btn{
       font-size: 20px;
       display: block;
       &__user{
-        text-decoration: none;
+        color: #4790BB;
+        background-color: #C0C0C0;
+        border-radius: 20px;
+      }
+      &__user:hover{
+        color: #235180;
+        border-bottom: 3px solid #235180;
       }
       &__post{
-        text-decoration: none;
-        color: pink;
-        //border: solid 1px blue;
+        color: #4790BB;
+        background-color: #C0C0C0;
+        border-radius: 20px;
+      }
+      &__post:hover{
+        @include name;
       }
       &__sign-out{
-        text-decoration: none;
-        color: pink;
+        color: #4790BB;
+        background-color: #C0C0C0;
+        border-radius: 20px;
+      }
+      &__sign-out:hover{
+        @include name;
       }
       &__sign-up{
-        text-decoration: none;
-        color: pink;
-        //border: solid 1px blue;
+        color: #4790BB;
+        background-color: #C0C0C0;
+        border-radius: 20px;
       }
       &__sign-in{
-        text-decoration: none;
-        color: pink;
-        //border: solid 1px blue;
+        color: #4790BB;
+        background-color: #C0C0C0;
+        border-radius: 20px;
+      }
+      &__sign-in:hover{
+        @include name;
       }
     }
   }
   footer{
+    font-size: 30px;
     height: 50px;
-    background-color: yellow;
+    background-color:#DEDEDE;
+    font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
+    text-align: center;
+    color: #4790BB;
+    text-shadow: 0 8px 9px #c4b59d, 0px -2px 1px #fff;
+    font-weight: bold;
+    // letter-spacing: -4px;
+    line-height: 50px;
     }

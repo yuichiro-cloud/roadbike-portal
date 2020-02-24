@@ -1,7 +1,7 @@
 $(function(){
-  $(".content-i__bottom__list__box__link").hover(function(){
-    $(this).addClass("content-i__bottom__list__box__link-add");
+  $(".content__bottom__list__box__link").hover(function(){
+    $(this).addClass("content__bottom__list__box__link-add");
   },function(){
-    $(this).removeClass("content-i__bottom__list__box__link-add");
+    $(this).removeClass("content__bottom__list__box__link-add");
   })
 });

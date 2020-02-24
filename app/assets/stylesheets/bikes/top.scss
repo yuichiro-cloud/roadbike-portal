@@ -1,8 +1,14 @@
+@mixin name{
+  color: #235180;
+  border-bottom: 5px solid #235180;
+  border-right: 5px solid #235180;
+}
 .bikes{
   .top{
-    .content-i{
+    .content{
       height:calc(100vh - 120px);
-      background-color: gray;
+      background-color: #CCCCCC;
+      height: 100%;
       &__top{
         display: flex;
         &__count{
@@ -20,21 +26,19 @@
         }
       }
       &__bottom{
+        height: 300px;
+        overflow: scroll;
         background-color: lightblue;
         text-decoration: none;
         &__font{
           font-size: 30px;
         }
         &__list{
-          // display: flex;
           &__box{
             display: flex;
           &__font{
             color: blue;
           &__link{
-            // background-color: lightgray;
-            // background-color: orchid;
-            // border: solid 1px orange;
             text-decoration: none;
             color: green;
             font-size: 20px;
@@ -43,19 +47,83 @@
         }
           &__link-add{
             font-size: 20px;
-            // background-color: orchid;
             border: solid 3px gray;
-            // padding-top: 1px;
-            // padding-right: 2px;
           }
         }
         }
       }
-      &__under{
-        text-decoration: none;
-        color: black;
-        font-size: 30px;
+      &__group{
+        display: flex;
+      &__left{
+        margin-left: 50px;
+        padding: 20px 20px 450px 20px;
+        width: 38vw;
+        height: 50px;
+        background-color: #4790BB;
+        line-height: 50px;
+        text-align: center;
+        border-radius: 20px;
+        &__font{
+          color: white;
+          background-color: #235180;
+          border-radius: 20px;
+        }
+        &__font:hover{
+          color: white;
+          border-bottom: 5px solid #28385E;
+          border-right: 5px solid #28385E;
+          padding: 10px;
+        }
+        &__list{
+          display: none;
+        }
       }
+      &__left:hover{
+        padding: 20px 20px 450px 20px;
+        // background-color: red;
+        .content__group__left__font{
+          
+        }
+        .content__group__left__list{
+          display: block;
+          &__box{
+            padding: 8px;
+            margin: 4px;
+            color: #4790BB;
+            background-color: #C0C0C0;
+            border-radius: 20px;
+          }
+          &__box:hover{
+            @include name;
+
+          }
+        }
+      }
+      &__chat{
+        margin: 0 auto;
+        padding: 20px 20px 450px 20px;
+        width: 38vw;
+        height: 50px;
+        background-color: #4790BB;
+        line-height: 50px;
+        text-align: center;
+        border-radius: 20px;
+        &__box{
+          &__message{
+            margin: 4px;
+            background-color: white;
+            border-radius: 20px;
+          }
+          &__date{
+            font-size: 13px;
+            background-color: #235180;
+            border-radius: 20px;
+            height: 30px;
+            line-height: 30px;
+          }
+        }
+      }
+    }
     }
   }
 }

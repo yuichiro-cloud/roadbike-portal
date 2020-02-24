@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     collection do
       get :top
       get :search
+      get 'chat', defaults: { format: 'json' }
     end
     # member do 
     #   get :search

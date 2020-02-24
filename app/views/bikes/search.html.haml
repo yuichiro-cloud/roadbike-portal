@@ -1,24 +1,49 @@
 .bikes
   .search
     .forms
-      - if @forms != nil
-        .forms__form
-          - @forms.each do |f|
+      .forms__form
+        - if (params[:search].present?)
+          - @search.each do |s|
             .forms__form__box
               .forms__form__box__brand
-                = "ブランド名:#{f.brand}"
-                = link_to f.model, bike_path(f.id), class:"forms__form__box__brand__link"
-              -# = "#{f.price}万円"
-              -# = "#{f.weight}kg"
-      - elsif @bikes != nil
-        .forms__form
+                = "ブランド名:"
+                = link_to s.brand, bike_path(s.id),class:"forms__form__box__brand__link"
+                = "車種:"
+                = link_to s.model, bike_path(s.id),class:"forms__form__box__brand__link"
+                = "重さ:"
+                = link_to s.weight, bike_path(s.weight),class:"forms__form__box__brand__link"
+                = "価格:"
+                = link_to s.price,bike_path(s.price),class:"forms__form__box__brand__link"
+
+        - else
           - @bikes.each do |b|
             .forms__form__box
               .forms__form__box__brand
                 = "ブランド名:#{b.brand}"
-                = link_to b.model, bike_path(b.id),class:"forms__form__box__brand__link"
-              -# = "#{b.price}万円"
-              -# = "#{b.weight}kg"
-      - else
-        .forms__error
-          - puts "検索結果はありませんでした"
+                = "車種:#{b.model}"
+                = "重さ:#{b.weight}"
+                = "価格:#{b.price}"
+                = link_to "この自転車の詳細に行く",bike_path(b.id),class:"forms__form__box__brand__link"
+
+    -# .forms
+    -#   - if @forms != nil
+    -#     .forms__form
+    -#       - @forms.each do |f|
+    -#         .forms__form__box
+    -#           .forms__form__box__brand
+    -#             = "ブランド名:#{f.brand}"
+    -#             = link_to f.model, bike_path(f.id), class:"forms__form__box__brand__link"
+    -#           -# = "#{f.price}万円"
+    -#           -# = "#{f.weight}kg"
+    -#   - elsif @bikes != nil
+    -#     .forms__form
+    -#       - @bikes.each do |b|
+    -#         .forms__form__box
+    -#           .forms__form__box__brand
+    -#             = "ブランド名:#{b.brand}"
+    -#             = link_to b.model, bike_path(b.id),class:"forms__form__box__brand__link"
+    -#           -# = "#{b.price}万円"
+    -#           -# = "#{b.weight}kg"
+    -#   - else
+    -#     .forms__error
+    -#       - puts "検索結果はありませんでした"

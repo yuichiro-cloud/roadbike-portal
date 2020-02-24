@@ -1,19 +1,23 @@
-.bike 
-  .bike__brand
-    =  "ブランド名:#{@bike.brand}"
-  .bike_model
-    = "車種名:#{@bike.model}"
-  .bike_image
-    - @images.each do |i|
-      = image_tag "#{i.src}",width:"100px",height:"100px"
-  .bike__weight
-    = "重さ:#{@bike.weight}kg"
-  .bike__price
-    = "価格:#{@bike.price}万"
-.comment
-  = "コメント"
-  - @comments.each do |c|
-    .comment__list
-      = c.text
-.new
-  = link_to "新規コメント", new_bike_comment_path(params[:id])
+.bike
+  .show
+    .contents
+      .contents__brand
+        =  "ブランド名:#{@bike.brand}"
+      .contents__model
+        = "車種名:#{@bike.model}"
+      .contents__weight
+        = "重さ:#{@bike.weight}kg"
+      .contents__price
+        = "価格:#{@bike.price}万"
+      .contents__image
+        .contents__image__box
+          - @images.each do |i|
+            = image_tag "#{i.src}",width:"100px",height:"100px"
+      .contents__comment
+        = "コメント"
+        .contents__comment__box
+          - @comments.each do |c|
+            .contents__comment__box__list
+              = c.text
+      .contents__post
+        = link_to "新規コメント", new_bike_comment_path(params[:id]),class:"comment"
