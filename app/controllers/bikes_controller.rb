@@ -32,7 +32,8 @@ class BikesController < ApplicationController
   def search
     @bikes = Bike.where(brand: params[:format])
     if params[:search].present?
-        @search = Bike.where(model:params[:search])
+        # @search = Bike.where(model:params[:search])
+        @search = Bike.where("model LIKE ?", "%#{params[:search]}%")
     end
   end
   def chat

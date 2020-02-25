@@ -10,20 +10,24 @@
       background-color: #CCCCCC;
       height: 100%;
       &__top{
-        display: flex;
         &__count{
           font-size: 25px;
   
         }
         &__form{
+          // margin: 0 auto;
+          display: flex;
+          padding-bottom: 50px;
+        &__text{
           background-color: white;
           height: 50px;
           width: 400px;
-          margin-left: 100px;
+          margin-left: 30vw;
         }
         &__submit{
           line-height: 50px;
         }
+      }
       }
       &__bottom{
         height: 300px;
@@ -64,12 +68,12 @@
         text-align: center;
         border-radius: 20px;
         &__font{
-          color: white;
+          color: #4790BB;
           background-color: #235180;
           border-radius: 20px;
         }
         &__font:hover{
-          color: white;
+          color: #4790BB;
           border-bottom: 5px solid #28385E;
           border-right: 5px solid #28385E;
           padding: 10px;
@@ -92,6 +96,9 @@
             color: #4790BB;
             background-color: #C0C0C0;
             border-radius: 20px;
+            &__name{
+              color: #4790BB;
+            }
           }
           &__box:hover{
             @include name;
