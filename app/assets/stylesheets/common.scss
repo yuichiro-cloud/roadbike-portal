@@ -59,6 +59,9 @@
         background-color: #C0C0C0;
         border-radius: 20px;
       }
+      &__sign-up:hover{
+        @include name;
+      }
       &__sign-in{
         color: #4790BB;
         background-color: #C0C0C0;

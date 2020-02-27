@@ -1,8 +1,13 @@
 .bike{
   .show{
     .contents{
-      background-color: #4072B3;
+      background-image: url("自転車背景.jpeg");
+      background-size: contain;
       padding: 20px;
+      &__top{
+        display: flex;
+      &__detail{
+        margin: 0 auto;
       &__brand{
         border-radius: 20px;
         text-align: center;
@@ -19,18 +24,6 @@
         background-color: #C0C0C0;
         margin-bottom: 5px;
       }
-      &__image{
-        margin: 0 auto;
-        width: 400px;
-        padding: 20px;
-        &__box{
-          border-radius: 20px;
-          text-align: center;
-          width: 100%;
-          background-color: #AEC4E5;
-          padding: 5px;
-        }
-      }
       &__weight{
         border-radius: 20px;
         text-align: center;
@@ -46,15 +39,57 @@
         margin: 0 auto;
         background-color: #C0C0C0;  
       }
+    }
+    &__user{
+      border-radius: 20px;
+      background-color: gray;
+      margin-right: 5px;
+      &__header{
+        text-align: center;
+      }
+      &__main{}
+      &__report{
+        border-radius: 20px;
+        margin: 0 auto;
+        text-align: center;
+        background-color: red;
+        width: 50px;
+        font-size: 20px;
+        }
+        &__report:hover{
+          border-bottom: 3px solid black;
+          border-right: 3px solid black;
+        }
+        &__report:active{
+          padding: 1px;
+          
+        }
+    }
+  }
+    &__image{
+      margin: 0 auto;
+      width: 400px;
+      padding: 20px;
+      opacity: 0.9;
+      &__box{
+        border-radius: 20px;
+        text-align: center;
+        width: 100%;
+        background-color: whitesmoke;
+        padding: 5px;
+      }
+    }
       &__comment{
         margin: 0 auto;
         width: 60vw;
         margin-bottom: 20px;
         &__box{
+          opacity: 0.9;
+          margin-bottom: 20px;
           border-radius: 20px;
           height: 200px;
           overflow: scroll;
-          background-color: #AEC4E5;
+          background-color: whitesmoke;
         &__list{
           padding: 3px;
           margin-left: 10px;

@@ -9,6 +9,9 @@ Rails.application.routes.draw do
     collection do
       get :top
       get :search
+      get :out, defaults: { format: 'json' }
+      post :first, defaults: { format: 'json' }
+      patch :manytimes, defaults: { format: 'json' }
       get 'chat', defaults: { format: 'json' }
     end
     # member do 

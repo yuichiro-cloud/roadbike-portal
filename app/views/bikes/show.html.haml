@@ -1,23 +1,33 @@
 .bike
   .show
     .contents
-      .contents__brand
-        =  "ブランド名:#{@bike.brand}"
-      .contents__model
-        = "車種名:#{@bike.model}"
-      .contents__weight
-        = "重さ:#{@bike.weight}kg"
-      .contents__price
-        = "価格:#{@bike.price}万"
+      .contents__top
+        .contents__top__detail
+          .contents__top__detail__brand
+            =  "ブランド名:#{@bike.brand}"
+          .contents__top__detail__model
+            = "車種名:#{@bike.model}"
+          .contents__top__detail__weight
+            = "重さ:#{@bike.weight}kg"
+          .contents__top__detail__price
+            = "価格:#{@bike.price}万"
+        .contents__top__user
+          .contents__top__user__header
+            = "出品者情報"
+          .contents__top__user__main
+            = "#{@user.nickname}さん"
+          - if current_user.id != @user.id #通報ボタンを出品者以外しか押せない
+            .contents__top__user__report{data:{index:@user.id}}
+              = "通報"
       .contents__image
         .contents__image__box
           - @images.each do |i|
             = image_tag "#{i.src}",width:"100px",height:"100px"
       .contents__comment
-        = "コメント"
-        .contents__comment__box
-          - @comments.each do |c|
-            .contents__comment__box__list
-              = c.text
+      = "コメント"
+      .contents__comment__box
+        - @comments.each do |c|
+          .contents__comment__box__list
+            = c.text
       .contents__post
         = link_to "新規コメント", new_bike_comment_path(params[:id]),class:"comment"

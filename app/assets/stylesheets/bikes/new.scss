@@ -2,9 +2,10 @@
 .bikes{
   .new{
     .content{
-      background-color: #CCCCCC;
+      background-image: url("自転車背景.jpeg");
       padding: 40px;
       &__form{
+        opacity: 0.9;
         background-color: #6A91C1;
         margin: 0 auto;
         width: 800px;
@@ -13,7 +14,7 @@
           margin: 20px;
           display: flex;
           &__name{
-            color: #ccc;
+            color: rgb(0, 0, 90);
             height: 25px;
             margin-top: 8px;
             border-radius: 10px;
@@ -50,7 +51,6 @@
                   text-align: center;
                   margin-top: 3px;
                   border-radius: 10px;
-                  
                 }
               }
             }
@@ -77,8 +77,13 @@
         &__btn{
           background-color: #ccc;
           border-radius: 20px;
+          margin-bottom: 7px;
 
-          margin-bottom: 5px;
+        }
+        &__btn:hover{
+          margin-bottom: 6px;
+          border-bottom: 2px solid black;
+          border-right: 2px solid black;
         }
       }
     }
