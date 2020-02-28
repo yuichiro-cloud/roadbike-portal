@@ -25,9 +25,5 @@
             - @groupIds.each do |g|
               .content__group__left__list__box#chat{data:{num:g}}
                 = link_to @groups.find(g).name,group_chats_path(g),class:"content__group__left__list__box__name"
-        -# .content__group__chat
-        -#   .content__group__chat__box
-        -#     - @chats.each do |chat|
-        -#       .content__group__chat__box__message
-        -#         = chat.text
+
         

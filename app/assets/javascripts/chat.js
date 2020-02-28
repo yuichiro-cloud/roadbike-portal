@@ -32,8 +32,8 @@ $(function(){
     })
     .done(function(data){
       var html = buildHTML(data);
-      $(".chats").append(html);
-      $('.chats').animate({ scrollTop: $('.chats')[0].scrollHeight});  
+      $("#chats").append(html);
+      $('#chats').animate({ scrollTop: $('#chats')[0].scrollHeight});  
       $('form')[0].reset();
       $(".form__submit").prop("disabled", false);
     
@@ -54,8 +54,8 @@ $(function(){
         $.each(chats, function(i, chat){
           insertHTML += buildHTML(chat)
         });
-        $(".chats").append(insertHTML);
-        $(".chats").animate({scrollTop: $(".chats")[0].scrollHeight});
+        $("#chats").append(insertHTML);
+        $("#chats").animate({scrollTop: $("#chats")[0].scrollHeight});
         $("#new_chat")[0].reset();
         $(".form__submit").prop("disabled", false);
       }

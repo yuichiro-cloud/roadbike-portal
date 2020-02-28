@@ -13,12 +13,17 @@
             = "価格:#{@bike.price}万"
         .contents__top__user
           .contents__top__user__header
-            = "出品者情報"
-          .contents__top__user__main
-            = "#{@user.nickname}さん"
-          - if current_user.id != @user.id #通報ボタンを出品者以外しか押せない
+            = "投稿者情報"
+          - if @user.banned == nil && current_user.id != @user.id  #通報ボタンを投稿者以外かつ凍結していないユーザーしか押せない
+            .contents__top__user__main
+              -# - if current_user.id != @user.id #通報ボタンを投稿者以外しか押せない
+              = "#{@user.nickname}さん"
             .contents__top__user__report{data:{index:@user.id}}
               = "通報"
+          - elsif current_user.id == @user.id   #投稿者だった場合
+            = "#{@user.nickname}さん"
+          - else 
+            = "凍結されたユーザーです"    #投稿者じゃないかつbannedカラムにidが入っている
       .contents__image
         .contents__image__box
           - @images.each do |i|
@@ -29,5 +34,7 @@
         - @comments.each do |c|
           .contents__comment__box__list
             = c.text
-      .contents__post
-        = link_to "新規コメント", new_bike_comment_path(params[:id]),class:"comment"
+      - if @user.banned == nil
+        .contents__post
+          = link_to "新規コメント", new_bike_comment_path(params[:id]),class:"comment"
+      - else

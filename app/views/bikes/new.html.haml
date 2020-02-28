@@ -3,6 +3,7 @@
     .content
       .content__form
         = form_for @bike do |f|
+          = render 'layouts/error', model: f.object
           .content__form__box
             .content__form__box__name
               = "ブランド名"

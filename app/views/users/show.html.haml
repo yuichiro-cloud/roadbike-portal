@@ -1,1 +1,19 @@
-マイページ
+.users
+  .show
+    .contents
+      .contents__header
+        .contents__header__mypage
+          = "マイページ"
+        .contents__header__index
+          = "出品した商品一覧"
+      .contents__main
+        - @bikes.each do |b|
+          .contents__main__box
+            .contents__main__box__image
+              = link_to bike_path(b.id) do
+                = image_tag "#{Image.find_by(bike_id: b.id).src}",width:"100px",height:"100px"
+            .contents__main__box__brand
+              = b.brand
+            .contents__main__box__name
+              = b.model
+      .contents__bottom

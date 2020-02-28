@@ -1,10 +1,16 @@
 .groups
-  -@groups.each do |g|
-    .groups__group
-      %label.groups__group__label
-        .groups__group__label__box
-          = link_to g.name,group_chats_path(g.id),class:"grous__group__label__box__link"
-        .groups__group__label__list
-          = "aaaa"
+  .index
+    .contents
+      .contents__left
+        -@groups.each do |g|
+          .contents__left__content
+            .contents__left__content__box
+              .contents__left__content__box__left
+                = link_to g.name,group_chats_path(g.id),class:"contents__left__content__box__left__name"
+              .contents__left__content__box__right
+      .contents__new
+        = link_to "New",new_group_path,class:"contents__new__link"
+        
+
         
           

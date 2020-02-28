@@ -1,6 +1,6 @@
 class BikesController < ApplicationController
   before_action :bike_params, only: [:create]
-  before_action :set_seller_user,only: [:out,:first,:manytimes]
+  before_action :set_seller_user,only: [:out,:first,:report]
   
   def top
     @bikes = Bike.all
@@ -22,11 +22,20 @@ class BikesController < ApplicationController
     @images = @bike.images
     @comments = @bike.comments
     @user = User.find(@bike.user_id)
+    if @user.banned == nil
+    else
+    end
   end
-
+  
   def new
-    @bike = Bike.new
-    @images = @bike.images.new
+    if current_user.banned != nil
+      redirect_to root_path
+      flash.now[:alert] = "凍結されています"
+    else
+      @bike = Bike.new
+      @images = @bike.images.new
+    end
+  else 
   end
 
   def search
@@ -42,23 +51,22 @@ class BikesController < ApplicationController
 
 
   def create
-    @bike = Bike.create!(bike_params)
-    if @bike.save
-      redirect_to root_path
-    else
-      render :new
+    if current_user.banned == nil   #凍結されていると投稿できない
+      @bike = Bike.new(bike_params)
+      if @bike.save
+        redirect_to root_path
+      else
+        render :new
+      end
+    else        
     end
   end
 
   def out
-    if @seller.reported == nil
       @info = 0
-    else
-      @info = 1
-    end
   end
 
-  def manytimes   #過去に通報されたことのあるユーザー(patchメソッド)
+  def report   
     @danger = Danger.new(reported: @seller.id, reporter: current_user.id)  #まずはここでdangerテーブルに通報情報を登録する
     if @danger.save
     else
@@ -67,13 +75,19 @@ class BikesController < ApplicationController
     @dangers = Danger.all
     @reported = @dangers.where(reported: @seller.id)     #ある人が通報されたもの全て
     @reporter_count = @reported.where(reporter: current_user.id).count   #ある出品者に対してある通報者一人が何回通報したか
-    @number = @seller.reported + 1.0/@reporter_count  #  
-    @user = User.update(@seller,reported: @number)
-    if @user.save
-    else 
-      flash[:失敗]
+    if @seller.reported == nil
+      @seller.reported = 0
+      @number = @seller.reported + 1.0/@reporter_count  #  1回目0 + 1/1になり@numberが1になる
+    else
+      @number = @seller.reported + 1.0/@reporter_count    #2回目以降の通報処理
     end
-
+    if @number < 5.0
+      @user = User.update(@seller,reported: @number)  #通報ポイントが5未満ならば通報後の通報ポイントをupdateする
+      @word = "safe"
+    else
+      @word ="ban"
+      @user = User.update(@seller,reported: 5.0,banned: @seller.id)   #通報ポイントが5を超えるとreportedに5が入りbannedに@sellerのidが入る
+    end
   end
 
   

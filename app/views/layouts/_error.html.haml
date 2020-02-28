@@ -1,0 +1,7 @@
+.error-message-box
+  -if model.errors.any? 
+    .error-message-box__alert
+      %ul
+        -model.errors.full_messages.each do |message|
+          .error-message-box__alert__list 
+            %li= message

@@ -1,0 +1,85 @@
+.groups{
+  .index{
+    .contents{
+      background-image: url("自転車背景.jpeg");
+      height: calc(100vh - 120px);
+      display: flex;
+      justify-content: space-between;
+      &__left{
+        opacity: 0.9;
+        width: 60vw;
+        height: 100%;
+        &__content{
+          height: 70px;
+          margin: 10px;
+          &__box{
+            opacity: 0.8;
+            &__left{
+            margin-left: 30px;
+            position: relative;
+            background-color: gray;
+            width: 400px;
+            height: 70px;
+            &__name{
+              padding: 10px;
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              color: black;
+            }
+            &__right{
+              
+            }
+          }
+        }
+        &__box:hover{
+          transition-duration: .2s;
+          transform: translate(10px,-5px) ;
+          // animation: group 2s  infinite;
+
+        }
+      }
+    }
+      &__new{
+        background-color: blue;
+        height: 120px;
+        width: 180px;
+        text-align: center;
+        line-height: 120px;
+        position: relative;
+        &__link{
+          display: block;
+          color: black;
+          height: 100%;
+          width: 100%;
+          position: absolute;
+        }
+      }
+      &__new:hover{
+        display: inline-block;
+        animation: shake 1s  infinite;
+        margin-right: 7px;
+        margin-top: 7px;
+      }
+      @keyframes shake {
+        0% {transform: translate(0px, 0px) rotateZ(0deg)}
+        9% {transform: translate(0px, 2px) rotateZ(-2deg)}
+        18% {transform: translate(0px, 4px) rotateZ(-4deg)}
+        27% {transform: translate(0px, 6px) rotateZ(-6deg)}
+        36% {transform: translate(0px, 8px) rotateZ(-8deg)}
+        45% {transform: translate(0px, 10px) rotateZ(-10deg)}
+        55% {transform: translate(0px, 10px) rotateZ(-10deg)}
+        64% {transform: translate(0px, 8px) rotateZ(-8deg)}
+        73% {transform: translate(0px, 6px) rotateZ(-6deg)}
+        82% {transform: translate(0px, 4px) rotateZ(-4deg)}
+        91% {transform: translate(0px, 2px) rotateZ(-2deg)}
+        100% {transform: translate(0px, 0px) rotateZ(0deg)}
+    }
+    }
+  }
+}
+// @keyframes group{
+//   100% {transform: translate(0px, 10px) rotateX(2deg);}
+//   100% {transform: translate(0px, 10px) rotateX(2deg);}
+
+// }
