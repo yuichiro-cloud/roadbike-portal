@@ -1,12 +1,21 @@
 Rails.application.routes.draw do
   devise_for :users
-  root "gets#index"
+  root "bikes#top"
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
   resources :bikes, only: [:new,:index, :show, :create] do
-    get :search, on: :collection
     resources :comments
+    collection do
+      get :top
+      get :search
+      get :out, defaults: { format: 'json' }
+      patch :report, defaults: { format: 'json' }
+      get 'chat', defaults: { format: 'json' }
+    end
+    # member do 
+    #   get :search
+    # end
   end
   resources :users
   resources :groups,only:[:new, :index, :create, :show] do

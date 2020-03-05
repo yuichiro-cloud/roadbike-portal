@@ -1,5 +1,12 @@
-.comment
-  = "コメント"
-  = form_for [@bike,@comment] do |f|
-    =f.text_field :text
-    =f.submit
+.comments
+  .new
+    .contents
+      .contents__header
+        = "新規コメント投稿画面"
+      .contents__main
+        = form_for [@bike,@comment] do |f|
+          .contents__main__form
+            .contents__main__form__left
+              =f.text_field :text,placeholder:"コメントを入力してください",class:"contents__main__form__left__text"
+            .contents__main__form__btn
+              =f.submit "送信",class:"contents__main__form__btn__submit"

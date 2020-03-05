@@ -1,0 +1,54 @@
+.chats{
+  .index{
+    background-image: url("自転車背景.jpeg");
+    height: calc(100vh - 120px);
+    .header{
+      padding: 20px;
+      text-align: center;
+      line-height: 50px;
+      height: 50px;
+      width: 400px;
+      background-color: gray;
+      color: black;
+    }
+    .chats{
+      height: calc(100vh - 350px);
+      overflow: scroll;
+      padding: 20px;
+      background-color: whitesmoke;
+      opacity: 0.7;
+      &__box{
+        margin: 10px;
+        display: flex;
+        &__chat{}
+        &__name{
+          margin-left: 10px;
+          font-size: 16px;
+        }
+        &__date{
+          font-size: 12px;
+        }
+      }
+    }
+    .form{
+      margin-top: 5px;
+      width: 500px;
+      #form-box{
+        display: flex;
+      .form__text{
+        line-height: 40px;
+        height: 40px;
+        width: 300px;
+      }
+      .form__submit{
+        background-color: yellow;
+        margin: 2px;
+        border: none;
+        height: 40px;
+        width: 60px;
+      }
+    }
+    }
+  }
+
+}

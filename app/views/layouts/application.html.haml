@@ -8,15 +8,15 @@
     = javascript_include_tag 'application'
   %body
     %header
-      = link_to "RoadBiker",root_path, class:"header__name"
-      %header__btn
+      = link_to "RoadBiker",root_path, class:"name"
+      .btn
         - if user_signed_in?
-          = "こんにちは#{current_user.nickname}さん"
-          = link_to "新規投稿",new_bike_path, class:"header__btn__post"  
-          = link_to "ログアウト", destroy_user_session_path, class:"header__btn__sign-out"
+          = link_to "こんにちは#{current_user.nickname}さん",user_path(current_user.id),class:"btn__user"
+          = link_to "新規投稿",new_bike_path, class:"btn__post"  
+          = link_to "ログアウト", destroy_user_session_path, class:"btn__sign-out"
         - else
-          = link_to "新規登録", new_user_registration_path, class:"header__btn__sign-up"
-          = link_to "ログイン", new_user_session_path, class:"header__btn__sign-in"
+          = link_to "新規登録", new_user_registration_path, class:"btn__sign-up"
+          = link_to "ログイン", new_user_session_path, class:"btn__sign-in"
     = yield
     %footer
-      フッター
+      Footer

@@ -1,22 +1,31 @@
-.forms
-  - if @forms != nil
-    .forms__form
-      - @forms.each do |f|
-        .forms__form__box
-          .forms__form__box__brand
-            = "ブランド名:#{f.brand}"
-            = link_to f.model, bike_path(f.id), class:"forms__form__box__brand__link"
-          -# = "#{f.price}万円"
-          -# = "#{f.weight}kg"
-  - elsif @bikes != nil
-    .forms__form
-      - @bikes.each do |b|
-        .forms__form__box
-          .forms__form__box__brand
-            = "ブランド名:#{b.brand}"
-            = link_to b.model, bike_path(b.id),class:"forms__form__box__brand__link"
-          -# = "#{b.price}万円"
-          -# = "#{b.weight}kg"
-  - else
-    .forms__error
-      - puts "検索結果はありませんでした"
+.bikes
+  .search
+    .contents
+      - if (params[:search].present?)
+        - @search.each do |s|
+          .contents__content
+            .contents__content__box
+              .contents__content__box__list
+                = "ブランド名:#{s.brand}"
+              .contents__content__box__list
+                = "車種:#{s.model}"
+              .contents__content__box__list
+                = "重さ:#{s.weight}"
+              .contents__content__box__list
+                = "価格:#{s.price}"
+            .contents__content__right
+              = link_to "この自転車の詳細に行く",bike_path(s.id),class:"contents__content__right__link"
+      - else
+        - @bikes.each do |b|
+          .contents__content
+            .contents__content__box
+              .contents__content__box__list
+                = "ブランド名:#{b.brand}"
+              .contents__content__box__list
+                = "車種:#{b.model}"
+              .contents__content__box__list
+                = "重さ:#{b.weight}"
+              .contents__content__box__list
+                = "価格:#{b.price}"
+            .contents__content__right
+              = link_to "この自転車の詳細に行く",bike_path(b.id),class:"contents__content__right__link"

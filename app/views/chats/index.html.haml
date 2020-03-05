@@ -1,17 +1,27 @@
-.header
-  = "#{@group.name}のチャット"
 .chats
-  - @chats.each do |c|
-    .chats__box{data:{chat:{id:c.id}}}
-      .chats__box__chat
-        = c.text
-      .chats__box__name
-        = "#{c.user.nickname}さん"
-      .chats__box__date
-        = c.created_at
-      
+  .index
+    .header
+      = "#{@group.name}のチャット"
+    .chats#chats
+      - @chats.each do |c|
+        .chats__box{data:{chat:{id:c.id}}}
+          .chats__box__chat
+            = c.text
+          .chats__box__name
+            = "#{c.user.nickname}さん"
+          .chats__box__date
+            = c.created_at
+    .form
+      = form_for [@group,@chat] do |f|
+        #form-box
+          = f.text_area :text,class:"form__text"
+          = f.submit "送信",class:"form__submit"
 
-.form
-  = form_for [@group,@chat] do |f|
-    = f.text_area :text
-    = f.submit "送信",class:"form__submit"
+-# .chats
+-#   .index
+-#     .contents
+-#       .contents__header
+-#       .contents__main
+-#         .contents__main__box
+-#         .contents__main__
+-#       .contents__bottom

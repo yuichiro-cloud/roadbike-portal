@@ -1,16 +1,40 @@
-.bike 
-  .bike__brand
-    =  "ブランド名:#{@bike.brand}"
-  .bike_model
-    = "車種名:#{@bike.model}"
-  .bike__weight
-    = "重さ:#{@bike.weight}kg"
-  .bike__price
-    = "価格:#{@bike.price}万"
-.comment
-  = "コメント"
-  - @comments.each do |c|
-    .comment__list
-      = c.text
-.new
-  = link_to "新規コメント", new_bike_comment_path(params[:id])
+.bike
+  .show
+    .contents
+      .contents__top
+        .contents__top__detail
+          .contents__top__detail__brand
+            =  "ブランド名:#{@bike.brand}"
+          .contents__top__detail__model
+            = "車種名:#{@bike.model}"
+          .contents__top__detail__weight
+            = "重さ:#{@bike.weight}kg"
+          .contents__top__detail__price
+            = "価格:#{@bike.price}万"
+        .contents__top__user
+          .contents__top__user__header
+            = "投稿者情報"
+          - if @user.banned == nil && current_user.id != @user.id  #通報ボタンを投稿者以外かつ凍結していないユーザーしか押せない
+            .contents__top__user__main
+              -# - if current_user.id != @user.id #通報ボタンを投稿者以外しか押せない
+              = "#{@user.nickname}さん"
+            .contents__top__user__report{data:{index:@user.id}}
+              = "通報"
+          - elsif current_user.id == @user.id   #投稿者だった場合
+            = "#{@user.nickname}さん"
+          - else 
+            = "凍結されたユーザーです"    #投稿者じゃないかつbannedカラムにidが入っている
+      .contents__image
+        .contents__image__box
+          - @images.each do |i|
+            = image_tag "#{i.src}",width:"100px",height:"100px"
+      .contents__comment
+      = "コメント"
+      .contents__comment__box
+        - @comments.each do |c|
+          .contents__comment__box__list
+            = c.text
+      - if @user.banned == nil
+        .contents__post
+          = link_to "新規コメント", new_bike_comment_path(params[:id]),class:"comment"
+      - else

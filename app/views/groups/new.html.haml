@@ -1,6 +1,13 @@
 -# 新規チャットグループ作成
-.form
-= form_for @group do |f|
-  = "グループ名"
-  = f.text_field :name, class:"form__group"
-  = f.submit class:"form__submit"
+.groups
+  .new
+    .contents
+      .contents__form
+        = form_for @group do |f|
+          .contents__form__error-box
+            = render 'layouts/error', model: f.object
+          .contents__form__box
+            .contents__form__box__left
+              = f.text_field :name,placeholder:"新規コミュニティー名",class:"contents__form__box__left__group"
+            .contents__form__box__right
+              = f.submit "新規作成",class:"contents__form__box__right__submit"

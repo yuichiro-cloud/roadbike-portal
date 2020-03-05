@@ -10,27 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200121120943) do
+ActiveRecord::Schema.define(version: 20200226151531) do
 
   create_table "bikes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "brand",                 null: false
     t.float    "weight",     limit: 24, null: false
     t.integer  "price",                 null: false
     t.string   "model",                 null: false
-    t.string   "image"
+    t.integer  "user_id",               null: false
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
-  end
-
-  create_table "brands", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "name",       null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_bikes_on_user_id", using: :btree
   end
 
   create_table "chats", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.text     "text",       limit: 65535
-    t.string   "image"
     t.integer  "user_id",                  null: false
     t.integer  "group_id",                 null: false
     t.datetime "created_at",               null: false
@@ -49,53 +43,46 @@ ActiveRecord::Schema.define(version: 20200121120943) do
     t.index ["user_id"], name: "index_comments_on_user_id", using: :btree
   end
 
+  create_table "dangers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "reported"
+    t.integer  "reporter"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "groups", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",       default: "", null: false
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
   end
 
-  create_table "models", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "src",        null: false
+    t.integer  "bike_id",    null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "prices", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.index ["bike_id"], name: "index_images_on_bike_id", using: :btree
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "nickname",               default: "", null: false
+    t.string   "email",                             default: "", null: false
+    t.string   "encrypted_password",                default: "", null: false
+    t.string   "nickname",                          default: "", null: false
+    t.float    "reported",               limit: 24
+    t.integer  "banned"
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+    t.datetime "created_at",                                     null: false
+    t.datetime "updated_at",                                     null: false
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
-  create_table "users_groups", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "group_id"
-    t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["group_id"], name: "index_users_groups_on_group_id", using: :btree
-    t.index ["user_id"], name: "index_users_groups_on_user_id", using: :btree
-  end
-
-  create_table "weights", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
+  add_foreign_key "bikes", "users"
   add_foreign_key "chats", "groups"
   add_foreign_key "chats", "users"
   add_foreign_key "comments", "bikes"
   add_foreign_key "comments", "users"
-  add_foreign_key "users_groups", "groups"
-  add_foreign_key "users_groups", "users"
+  add_foreign_key "images", "bikes"
 end

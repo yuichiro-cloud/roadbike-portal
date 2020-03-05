@@ -1,27 +1,42 @@
-.content-n
-  .content-n__form
-  = form_for @bike do |f|
-    .content-n__form__box
-      .content-n__form__box__name
-        ブランド名
-        = f.text_field :brand
-    .content-n__form__box
-      .content-n__form__box__name
-        車種名
-        = f.text_field :model
-    .content-n__form__box
-      .content-n__form__box__name
-        画像
-        = f.text_field :image
-    .content-n__form__box
-      .content-n__form__box__name
-        価格
-        = f.text_field :price
-    .content-n__form__box
-      .content-n__form__box__name
-        重さ
-        = f.text_field :weight
-    = f.submit :"登録する", class:"content-n__submit"
+.bikes
+  .new
+    .content
+      .content__form
+        = form_for @bike do |f|
+          = render 'layouts/error', model: f.object
+          .content__form__box
+            .content__form__box__name
+              = "ブランド名"
+            = f.text_field :brand,class:"field"
+          .content__form__box
+            .content__form__box__name
+              = "車種名　　"
+            = f.text_field :model,class:"field"
+          .content__form__box
+            .content__form__box__name
+              = "価格　　　"
+            = f.text_field :price,class:"field"
+          .content__form__box
+            .content__form__box__name
+              = "重さ　　　"
+            = f.text_field :weight,class:"field"
+          .content__form__image
+            .content__form__image__name
+              画像
+            .content__form__image__main
+              -# .content__form__image__main__box #ここから下5行はjsでアペンドされる要素
+              -#   .content__form__image__main__box__pic
+              -#   .content__form__image__main__box__btns
+              -#     .content__form__image__main__box__btns__remove
+              -#       = "削除"
+              %label.content__form__image__main__label#label{for:"bike_images_attributes_0_src"}
+                #image-box
+                  = f.fields_for :images do |image|
+                    .content__form__image__main__label__group{data:{index:image.index}}
+                      = image.file_field :src,class:"file"
+                    = "選択"
+          .content__form__submit
+            = f.submit :"登録する", class:"content__form__submit__btn"
       
         
 

@@ -49,6 +49,10 @@ test:
 #
 production:
   <<: *default
-  database: roadbike-portal_production
-  username: roadbike-portal
-  password: <%= ENV['ROADBIKE-PORTAL_DATABASE_PASSWORD'] %>
+  # database: roadbike-portal_production
+  # username: roadbike-portal
+  # password: <%= ENV['ROADBIKE-PORTAL_DATABASE_PASSWORD'] %>
+  <<: *default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5

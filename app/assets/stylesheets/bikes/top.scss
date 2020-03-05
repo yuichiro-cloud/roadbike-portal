@@ -1,0 +1,155 @@
+@mixin name{
+  color: #FF5722;
+  border-bottom: 5px solid #FF5722;
+  border-right: 5px solid #FF5722;
+}
+.bikes{
+  .top{
+    .content{
+      background-image: url("自転車背景.jpeg");
+      background-size: contain;
+      height: calc(100% - 120px);
+      width: calc(100vw);
+      &__top{
+        padding: 10px;
+        &__count{
+          font-size: 25px;
+          color: #FF5722;
+          
+        }
+        &__form{
+          height: 60px;
+          display: flex;
+          padding-bottom: 50px;
+          &__text{
+            background-color: white;
+            height: 50px;
+            width: 400px;
+            margin-left: 30vw;
+          }
+          &__submit{
+            margin: 3px;
+            height: 50px;
+            line-height: 50px;
+            background-color: yellow;
+            margin-left: 10px;
+          }
+          &__submit:hover{
+            border-bottom: 5px solid gray;
+            border-right: 5px solid gray;
+          }
+        }
+      }
+      &__bottom{
+        height: 300px;
+        overflow: scroll;
+        text-decoration: none;
+        background-color: lightyellow;
+        opacity: 0.8;
+        &__font{
+          font-size: 30px;
+          color: rgb(26, 25, 25);
+        }
+        &__list{
+          &__box{
+            display: flex;
+            &__font{
+              color: rgb(214, 149, 27);
+              &__link{
+                text-decoration: none;
+                color: black;
+                margin-bottom: 2px;
+              }
+              &__link:hover{
+                border-top: 4px solid black;
+                border-right: 3px solid black;
+              }
+            }
+            &__link-add{
+              font-size: 20px;
+              border: solid 3px gray;
+            }
+          }
+        }
+      }
+      &__group{
+        opacity: 0.8;
+        display: flex;
+        &__left{
+          margin-left: 50px;
+          padding: 20px 20px 450px 20px;
+          width: 38vw;
+          height: 50px;
+          background-color: rgb(53, 80, 129);
+          line-height: 50px;
+          text-align: center;
+          border-radius: 5px;
+          &__font{
+          color: black;
+          background-color: rgb(255, 255, 149);
+          border-radius: 20px;
+          padding: 4px;
+        }
+        &__font:hover{
+          color: #4790BB;
+          border-bottom: 5px solid #28385E;
+          border-right: 5px solid #28385E;
+          padding: 10px;
+        }
+        &__list{
+          display: none;
+        }
+      }
+      &__left:hover{
+        padding: 20px 20px 450px 20px;
+        // background-color: red;
+        background-color: rgb(53, 80, 129);
+        .content__group__left__font{
+          
+        }
+        .content__group__left__list{
+          display: block;
+          &__box{
+            padding: 8px;
+            margin: 4px;
+            color: #FF5722;
+            background-color: #C0C0C0;
+            border-radius: 20px;
+            &__name{
+              color: #4790BB;
+            }
+          }
+          &__box:hover{
+            @include name;
+
+          }
+        }
+      }
+      &__chat{
+        margin: 0 auto;
+        padding: 20px 20px 450px 20px;
+        width: 38vw;
+        height: 50px;
+        background-color: rgb(53, 80, 129);
+        line-height: 50px;
+        text-align: center;
+        border-radius: 20px;
+        &__box{
+          &__message{
+            margin: 4px;
+            background-color: white;
+            border-radius: 20px;
+          }
+          &__date{
+            font-size: 13px;
+            background-color: #235180;
+            border-radius: 20px;
+            height: 30px;
+            line-height: 30px;
+          }
+        }
+      }
+    }
+    }
+  }
+}

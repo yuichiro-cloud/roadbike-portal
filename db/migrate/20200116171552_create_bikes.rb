@@ -5,7 +5,7 @@ class CreateBikes < ActiveRecord::Migration[5.0]
       t.float :weight, null:false
       t.integer :price, null:false
       t.string :model, null:false
-      t.string :image
+      t.references :user,null: false, foreign_key:true
       t.timestamps
     end
   end

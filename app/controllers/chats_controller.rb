@@ -3,14 +3,9 @@ class ChatsController < ApplicationController
   def index
     @chat = Chat.new
     @chats = @group.chats.includes(:user)
-    # binding.pry
-    # @user = User.find(@chats.user_id)
-
-    # binding.pry
   end
 
   def create
-    # binding.pry
     @chat = @group.chats.new(chat_params)
     # binding.pry
     @user = User.find(@chat.user_id)
