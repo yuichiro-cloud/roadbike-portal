@@ -48,7 +48,6 @@ $(function(){
       data: {id: last_chat_id}
     })
     .done(function(chats){
-      // console.log(chats);
       if (chats.length !== 0){
         var insertHTML = "";
         $.each(chats, function(i, chat){

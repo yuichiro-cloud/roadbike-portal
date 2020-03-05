@@ -51,12 +51,18 @@ class BikesController < ApplicationController
 
 
   def create
+    # binding.pry
     if current_user.banned == nil   #凍結されていると投稿できない
       @bike = Bike.new(bike_params)
+      # binding.pry
       if @bike.save
         redirect_to root_path
-      else
-        render :new
+      elsif params[:bike][:images_attributes] == nil    #画像がなかった場合
+        @images = @bike.images.new
+        render action: :new
+      else    #画像があった場合
+        render action: :new
+        # redirect_to new_bike_path
       end
     else        
     end
@@ -100,5 +106,6 @@ class BikesController < ApplicationController
     def set_seller_user
       @seller = User.find(params[:user_id])
     end
+
     
   end
