@@ -1,0 +1,92 @@
+//bikesコントローラーのnewアクションに対応するscss
+.bikes{
+  .new{
+    .content{
+      background-image: url("自転車背景.jpeg");
+      padding: 40px;
+      &__form{
+        opacity: 0.9;
+        background-color: #6A91C1;
+        margin: 0 auto;
+        width: 800px;
+        border-radius: 20px;
+        &__box{
+          margin: 20px;
+          display: flex;
+          &__name{
+            color: rgb(0, 0, 90);
+            height: 25px;
+            margin-top: 8px;
+            border-radius: 10px;
+          }
+            .field{
+              margin: 10px;
+              border-radius: 10px;
+            }
+        }
+        &__image{
+          margin: 20px;
+          height: 100%;
+          width: 560px;
+          &__name{
+            width: 40px;
+            border-radius: 10px;
+            color:#ccc;
+          }
+          &__main{
+            padding: 5px;
+            display: flex;
+            flex-wrap: wrap;
+            width: 550px;
+            &__box{
+              margin: 5px;
+              &__pic{
+                width: 100px;
+                height: 100px;
+              }
+              &__btns{
+                width: 100px;
+                &__remove{
+                  background-color: #516C8D;
+                  text-align: center;
+                  margin-top: 3px;
+                  border-radius: 10px;
+                }
+              }
+            }
+            &__label{
+              // height: 140px;
+              border-radius: 20px;
+              flex: 1;
+              text-align: center;
+              background-color: #60CAAD;
+              padding: 56px 20px 56px;
+              border: 1px dashed #ccc;
+              cursor: pointer;
+              &__group{
+                .file{
+                  display: none;
+                }
+              }
+            }
+        }
+        }
+      &__submit{
+        margin-top: 50px;
+        text-align:center;
+        &__btn{
+          background-color: #ccc;
+          border-radius: 20px;
+          margin-bottom: 7px;
+
+        }
+        &__btn:hover{
+          margin-bottom: 6px;
+          border-bottom: 2px solid black;
+          border-right: 2px solid black;
+        }
+      }
+    }
+    }
+  }
+}

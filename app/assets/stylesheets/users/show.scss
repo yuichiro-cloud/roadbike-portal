@@ -1,0 +1,42 @@
+.users{
+  .show{
+    .contents{
+      background-image: url("自転車背景.jpeg");
+      height: calc(100vh - 120px);
+      &__header{
+        &__mypage{
+          text-align: center;
+          background-color: lightblue;
+        }
+        &__index{
+          font-size: 22px;
+          text-align: center;
+        }
+      }
+      &__main{
+        display: flex;
+        width: 100vw;
+        flex-wrap: wrap;
+        &__box{
+          opacity: 0.9;
+          padding: 10px;
+          background-color: gray;
+          margin: 10px;
+          &__image{}
+          &__image:hover{
+            opacity: 0.8;
+          }
+          &__name{
+            text-align: center;
+          }
+          &__brand{
+            text-align: center;
+          }
+        }
+      }
+      &__bottom{
+
+      }
+    }
+  }
+}

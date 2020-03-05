@@ -1,0 +1,35 @@
+.bikes{
+  .search{
+    .contents{
+      background-image: url("自転車背景.jpeg");
+      // background-size: contain;
+      height: calc(100vh - 120px);
+      width: calc(100vw);
+      padding: 30px;
+      &__content{
+        background-color: lightyellow;
+        opacity: 0.9;
+        display: flex;
+        &__box{
+          display: flex;
+          color: gray;
+          margin: 4px;
+          &__list{}
+
+        }
+        &__right{
+          margin-left: 30px;
+          &__link{
+            color: blue;
+          }
+        }
+        &__right:hover{
+          background-color: yellow;
+          border-bottom: 5px solid gray;
+          border-right: 5px solid gray;
+        }
+      }
+    }
+  }
+}
+

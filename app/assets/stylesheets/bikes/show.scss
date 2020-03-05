@@ -1,0 +1,129 @@
+.bike{
+  .show{
+    .contents{
+      background-image: url("自転車背景.jpeg");
+      background-size: contain;
+      padding: 20px;
+      &__top{
+        display: flex;
+      &__detail{
+        margin: 0 auto;
+      &__brand{
+        border-radius: 20px;
+        text-align: center;
+        width: 300px;
+        margin: 0 auto;
+        background-color: #C0C0C0;
+        margin-bottom: 5px;
+      }
+      &__model{
+        border-radius: 20px;
+        text-align: center;
+        width: 250px;
+        margin: 0 auto;
+        background-color: #C0C0C0;
+        margin-bottom: 5px;
+      }
+      &__weight{
+        border-radius: 20px;
+        text-align: center;
+        width: 200px;
+        margin: 0 auto;
+        background-color: #C0C0C0;
+        margin-bottom: 5px;
+      }
+      &__price{
+        border-radius: 20px;
+        text-align: center;
+        width: 200px;
+        margin: 0 auto;
+        background-color: #C0C0C0;  
+      }
+    }
+    &__user{
+      border-radius: 20px;
+      background-color: gray;
+      margin-right: 5px;
+      &__header{
+        text-align: center;
+      }
+      &__main{}
+      &__report{
+        border-radius: 20px;
+        margin: 0 auto;
+        text-align: center;
+        background-color: red;
+        width: 50px;
+        font-size: 20px;
+        }
+        &__report:hover{
+          border-bottom: 3px solid black;
+          border-right: 3px solid black;
+        }
+        &__report:active{
+          padding: 1px;
+          
+        }
+    }
+  }
+    &__image{
+      margin: 0 auto;
+      width: 400px;
+      padding: 20px;
+      opacity: 0.9;
+      &__box{
+        border-radius: 20px;
+        text-align: center;
+        width: 100%;
+        background-color: whitesmoke;
+        padding: 5px;
+      }
+    }
+      &__comment{
+        margin: 0 auto;
+        width: 60vw;
+        margin-bottom: 20px;
+        &__box{
+          opacity: 0.9;
+          margin-bottom: 20px;
+          border-radius: 20px;
+          height: 200px;
+          overflow: scroll;
+          background-color: whitesmoke;
+        &__list{
+          padding: 3px;
+          margin-left: 10px;
+          margin-top: 10px;
+        }
+      }
+    }
+        &__post{
+          line-height: 40px;
+          width: 200px;
+          height: 40px;
+          margin: 0 auto;
+          text-align: center;
+          border-radius: 20px;
+          background-color: #C0C0C0;
+          .comment{
+            color: black;
+          }
+        }
+          &__post:hover{
+            padding-right: 5px;
+            padding-top: 2px;
+            padding-bottom: 2px;
+            width: 203px;
+            height: 36px;
+            margin: 0 auto;
+            text-align: center;
+            border-radius: 20px;
+            // background-color: #C0C0C0;
+          background-color: gray;
+            .comment:hover{
+
+            }
+        }
+    }
+  }
+}

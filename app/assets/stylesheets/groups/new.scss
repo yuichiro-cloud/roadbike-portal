@@ -1,0 +1,40 @@
+.groups{
+  .new{
+    .contents{
+      background-image: url("自転車背景.jpeg");
+      height: calc(100vh - 120px);
+      width: 100vw;
+      &__form{
+        &__error-box{
+          height: 100px;
+          position: relative;
+          .error-message-box{
+            position: absolute;
+            &__alert{
+              &__list{
+
+              }
+            }
+          }
+        }
+        &__box{
+          display: flex;
+          justify-content: center;
+          padding-top: 30vh;
+          &__left{
+            &__group{
+              height: 40px;
+              width: 40vw;
+            }
+          }
+          &__right{
+            &__submit{
+              margin: 3px;
+              height: 40px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
