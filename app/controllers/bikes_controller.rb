@@ -35,7 +35,6 @@ class BikesController < ApplicationController
       @bike = Bike.new
       @images = @bike.images.new
     end
-  else 
   end
 
   def search
