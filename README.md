@@ -61,5 +61,5 @@
 |reporter|integer||
 
 !(roadbikerトップページ.png)
-
+![エビフライトライアングル](http://i.imgur.com/Jjwsc.jpg "サンプル")
 
