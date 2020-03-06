@@ -6,5 +6,5 @@ class User < ApplicationRecord
          has_many :bikes
          has_many :comments
          has_many :chats
-         has_many :groups, through: :users_groups
+        #  has_many :groups, through: :users_groups
 end
