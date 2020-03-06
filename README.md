@@ -60,6 +60,6 @@
 |reported|integer||
 |reporter|integer||
 
-! roadbikerトップページ.png
+!(roadbikerトップページ.png)
 
 
