@@ -60,6 +60,6 @@
 |reported|integer||
 |reporter|integer||
 
-![RoadBiker](https://imgur.com/a/ucztDWz)
+![RoadBiker](https://imgur.com/wuP2ElG)
 ![エビフライトライアングル](http://i.imgur.com/Jjwsc.jpg "サンプル")
 
